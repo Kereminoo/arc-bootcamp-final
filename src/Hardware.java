@@ -39,10 +39,31 @@ public abstract class Hardware {
         return unitCost;
     }
 
-    public void sellHardware(int amountSold) {
-        if (amountInStock - amountSold < 0) {
-            throw new IllegalArgumentException("There's not enough stock to sell " + amountSold + getDisplayName() + "(s).");
+    public void setAmountInStock(int amountInStock) {
+        if (amountInStock < 0) {
+            throw new IllegalArgumentException("Amount in stock cannot be negative!");
         }
-        amountInStock -= amountSold;
+        this.amountInStock = amountInStock;
+    }
+
+    public abstract String getCategoryDetails();
+
+    @Override
+    public String toString() {
+        return String.format("Hardware[partID=%d, displayName=%s, amountInStock=%d, unitCost=%f]",
+                                                     partID, displayName, amountInStock, unitCost
+        );
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Hardware)) return false;
+        if (this == other) return true;
+        return this.partID == ((Hardware) other).partID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(partID);
     }
 }
