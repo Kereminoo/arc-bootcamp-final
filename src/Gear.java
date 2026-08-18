@@ -1,7 +1,7 @@
 public class Gear extends Hardware {
-    public int teethCount;
-    public GearMaterial material;
-    public double pitchDiameterMm;
+    private int teethCount;
+    private GearMaterial material;
+    private double pitchDiameterMm;
 
     public Gear(int partID, String displayName, int amountInStock, double unitCost, int teethCount, GearMaterial material, double pitchDiameterMm) {
         super(partID, displayName, amountInStock, unitCost);
