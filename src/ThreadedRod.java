@@ -21,7 +21,7 @@ public class ThreadedRod extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Diameter (mm): %f, Length (m): %f, Thread Pitch (mm): %f.",
+        return String.format("Category: Threaded Rod, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Diameter (mm): %f, Length (m): %f, Thread Pitch (mm): %f.",
                                                   getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), diameterMm, lengthMeters, threadPitchMm
         );
     }

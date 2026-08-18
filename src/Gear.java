@@ -19,7 +19,7 @@ public class Gear extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Teeth Count: %d, Material: %s, Pitch Diameter (mm): %f",
+        return String.format("Category: Gear, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Teeth Count: %d, Material: %s, Pitch Diameter (mm): %f",
                                                   getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), teethCount, material, pitchDiameterMm 
         );
     }

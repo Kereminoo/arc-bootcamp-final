@@ -21,7 +21,7 @@ public class Washer extends Hardware {
     
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Outer Diameter (mm): %f, Inner Diameter (mm): %f, Thickness (mm): %f",
+        return String.format("Category: Washer, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Outer Diameter (mm): %f, Inner Diameter (mm): %f, Thickness (mm): %f",
                                                   getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), outerDiameterMm, innerDiameterMm,  thicknessMm
         );
     }

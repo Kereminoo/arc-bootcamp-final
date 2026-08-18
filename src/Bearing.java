@@ -16,7 +16,7 @@ public class Bearing extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Bore Diameter (mm): %f, Static Load Rating (N): %f.",
+        return String.format("Category: Bearing, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Bore Diameter (mm): %f, Static Load Rating (N): %f.",
                                                   getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), boreDiameterMm, staticLoadRatingN
         );
     }

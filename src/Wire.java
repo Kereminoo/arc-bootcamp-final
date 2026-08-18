@@ -18,7 +18,7 @@ public class Wire extends Hardware {
     
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Gauge (mm²): %f, Length (m): %f, Insulation Color: %s",
+        return String.format("Category: Wire, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Gauge (mm²): %f, Length (m): %f, Insulation Color: %s",
                                                   getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), gaugeMmSquared, lengthMeters, insulationColor
         );
     }
