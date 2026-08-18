@@ -1,7 +1,7 @@
 public class ThreadedRod extends Hardware {
-    public double diameterMm;
-    public double lengthMeters;
-    public double threadPitchMm;
+    private double diameterMm;
+    private double lengthMeters;
+    private double threadPitchMm;
 
     public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double lengthMeters, double threadPitchMm) {
         super(partID, displayName, amountInStock, unitCost);

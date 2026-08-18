@@ -1,6 +1,6 @@
 public class Bearing extends Hardware {
-    public double boreDiameterMm;
-    public double staticLoadRatingN;
+    private double boreDiameterMm;
+    private double staticLoadRatingN;
 
     public Bearing(int partID, String displayName, int amountInStock, double unitCost, double boreDiameterMm, double staticLoadRatingG) {
         super(partID, displayName, amountInStock, unitCost);
