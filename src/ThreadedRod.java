@@ -1,8 +1,7 @@
-public class ThreadedRod extends Hardware implements SoldByWeight {
+public class ThreadedRod extends Hardware {
     private double diameterMm;
     private double lengthMeters;
     private double threadPitchMm;
-    private double pricePerKg;
 
     public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double lengthMeters, double threadPitchMm, double pricePerKg) {
         super(partID, displayName, amountInStock, unitCost);
@@ -15,14 +14,10 @@ public class ThreadedRod extends Hardware implements SoldByWeight {
         if (threadPitchMm <= 0) {
             throw new IllegalArgumentException("Thread pitch cannot be zero or negative!");
         }
-        if (pricePerKg <= 0) {
-            throw new IllegalArgumentException("Price per kilogram cannot be zero or negative!");
-        }
 
         this.diameterMm = diameterMm;
         this.lengthMeters = lengthMeters;
         this.threadPitchMm = threadPitchMm;
-        this.pricePerKg = pricePerKg;
     }
 
     @Override
@@ -42,9 +37,5 @@ public class ThreadedRod extends Hardware implements SoldByWeight {
 
     public double getThreadPitchMm() {
         return threadPitchMm;
-    }
-
-    public double getPricePerKg() {
-        return pricePerKg;
     }
 }

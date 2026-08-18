@@ -1,8 +1,7 @@
-public class Washer extends Hardware implements SoldByWeight {
+public class Washer extends Hardware {
     private double outerDiameterMm;
     private double innerDiameterMm;
     private double thicknessMm;
-    private double pricePerKg;
 
     public Washer(int partID, String displayName, int amountInStock, double unitCost, double outerDiameterMm, double innerDiameterMm, double thicknessMm, double pricePerKg) {
         super(partID, displayName, amountInStock, unitCost);
@@ -15,14 +14,10 @@ public class Washer extends Hardware implements SoldByWeight {
         if (thicknessMm <= 0) {
             throw new IllegalArgumentException("Thickness cannot be zero or negative!");
         }
-        if (pricePerKg <= 0) {
-            throw new IllegalArgumentException("Price per kilogram cannot be zero or negative!");
-        }
 
         this.outerDiameterMm = outerDiameterMm;
         this.innerDiameterMm = innerDiameterMm;
         this.thicknessMm = thicknessMm;
-        this.pricePerKg = pricePerKg;
     }
     
     @Override
@@ -42,9 +37,5 @@ public class Washer extends Hardware implements SoldByWeight {
 
     public double getThicknessMm() {
         return thicknessMm;
-    }
-
-    public double getPricePerKg() {
-        return pricePerKg;
     }
 }
