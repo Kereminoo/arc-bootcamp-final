@@ -13,7 +13,16 @@ public class DrillBit extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCategoryDetails'");
+        return String.format("Category: Drill Bit, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Diameter (mm): %f, Type: %s,",
+                                                  getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), diameterMm, type
+        );
+    }
+
+    public double getDiameterMm() {
+        return diameterMm;
+    }
+
+    public DrillBitType getType() {
+        return type;
     }
 }
