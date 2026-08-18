@@ -1,8 +1,9 @@
-public class Nut extends Hardware{
+public class Nut extends Hardware implements SoldByWeight{
     private double diameterMm;
     private double threadPitchMm; // if i understood it correctly
+    private double pricePerKg;
 
-    public Nut(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double threadPitchMm) {
+    public Nut(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double threadPitchMm, double pricePerKg) {
         super(partID, displayName, amountInStock, unitCost);
         
         if (diameterMm <= 0) {
@@ -11,9 +12,13 @@ public class Nut extends Hardware{
         if (threadPitchMm <= 0) {
             throw new IllegalArgumentException("Thread pitch (mm) cannot be zero or below!");
         }
+        if (pricePerKg <= 0) {
+            throw new IllegalArgumentException("Price per kilogram cannot be zero or negative!");
+        }
 
         this.diameterMm = diameterMm;
         this.threadPitchMm = threadPitchMm;
+        this.pricePerKg = pricePerKg;
     }
 
     @Override
@@ -29,5 +34,10 @@ public class Nut extends Hardware{
     
     public double getThreadPitchMm() {
         return threadPitchMm;
+    }
+
+    @Override
+    public double getPricePerKg() {
+        return pricePerKg;
     }
 }
