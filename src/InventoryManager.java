@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -26,5 +29,26 @@ public class InventoryManager {
             return Optional.of(inventory.get(partID));
         }
         return Optional.empty();
+    }
+
+    public List<Hardware> getSortedInventoryByQuantity() {
+        List<Hardware> inventoryList = new ArrayList<>(inventory.values());
+        inventoryList.sort(Comparator.comparingInt(Hardware::getAmountInStock));
+        return inventoryList;
+    }
+
+    public List<Hardware> getSortedInventoryByTotalValue() {
+        List<Hardware> inventoryList = new ArrayList<>(inventory.values());
+        inventoryList.sort(Comparator.comparingDouble(
+            hardware -> hardware.getUnitCost() * hardware.getAmountInStock()
+        ));
+        return inventoryList;
+    }
+
+    public List<Hardware> getLowStockItems(int lowStockThreshold) {
+        List<Hardware> inventoryList = new ArrayList<>(inventory.values());
+        // only keeps the items with low stock
+        inventoryList.removeIf(hardware -> hardware.getAmountInStock() > lowStockThreshold);
+        return inventoryList;
     }
 }
