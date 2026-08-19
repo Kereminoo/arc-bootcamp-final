@@ -3,7 +3,7 @@ public class Washer extends Hardware {
     private double innerDiameterMm;
     private double thicknessMm;
 
-    public Washer(int partID, String displayName, int amountInStock, double unitCost, double outerDiameterMm, double innerDiameterMm, double thicknessMm, double pricePerKg) {
+    public Washer(int partID, String displayName, int amountInStock, double unitCost, double outerDiameterMm, double innerDiameterMm, double thicknessMm) {
         super(partID, displayName, amountInStock, unitCost);
         if (outerDiameterMm <= 0) {
             throw new IllegalArgumentException("Outer diameter cannot be zero or negative!");

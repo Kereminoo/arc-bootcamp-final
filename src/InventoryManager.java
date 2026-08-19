@@ -12,6 +12,10 @@ public class InventoryManager {
         this.inventory = new HashMap<>();
     }
 
+    public Map<Integer, Hardware> getInventory() {
+        return inventory;
+    }
+
     public void addNewItem(Hardware item) {
         inventory.put(item.getPartID(), item);
     }

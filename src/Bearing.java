@@ -2,16 +2,16 @@ public class Bearing extends Hardware {
     private double boreDiameterMm;
     private double staticLoadRatingN;
 
-    public Bearing(int partID, String displayName, int amountInStock, double unitCost, double boreDiameterMm, double staticLoadRatingG) {
+    public Bearing(int partID, String displayName, int amountInStock, double unitCost, double boreDiameterMm, double staticLoadRatingN) {
         super(partID, displayName, amountInStock, unitCost);
         if (boreDiameterMm <= 0) {
             throw new IllegalArgumentException("Bore diameter cannot be zero or negative!");
         }
-        if (staticLoadRatingG <= 0) {
+        if (staticLoadRatingN <= 0) {
             throw new IllegalArgumentException("Static load rating cannot be zero or negative newtons!");
         }
         this.boreDiameterMm = boreDiameterMm;
-        this.staticLoadRatingN = staticLoadRatingG;
+        this.staticLoadRatingN = staticLoadRatingN;
     }
 
     @Override
