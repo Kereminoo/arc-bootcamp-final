@@ -278,9 +278,10 @@ public class CSVIO {
 
                 String fullLine = commonFields + "," + itemSpecificFields;
                 writer.write(fullLine);
+                writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Could not export CSV to file at " + filepath + ".");
         }
     }
 }

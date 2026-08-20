@@ -1,0 +1,8 @@
+Type,partID,displayName,amountInStock,unitCost,ParamA,ParamB,ParamCBEARING,101,Flanged Ball Bearing 8mm,25,3.5,8.0,1200.0
+BOLT,102,M4 Hex Cap Screw 20mm,150,0.15,20.0,4.0,HEX
+DRILLBIT,103,Cobalt Drill Bit 5mm,12,4.25,5.0,TWIST
+NUT,105,M4 Nylon Lock Nut,200,0.08,4.0,0.7
+SCREWDRIVER,106,Precision Screwdriver #1,5,8.5,3.5,PHILLIPS
+SCREWDRIVERBIT,107,Torx T20 Driver Bit,40,1.2,6.35,TORX
+THREADEDROD,108,M8 Stainless Rod 1m,15,6.75,8.0,1.0,1.25
+WASHER,109,M4 Flat Washer,300,0.03,10.0,4.3,1.0
