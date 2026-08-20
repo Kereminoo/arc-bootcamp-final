@@ -3,7 +3,8 @@ public class Gear extends Hardware {
     private GearMaterial material;
     private double pitchDiameterMm;
 
-    public Gear(int partID, String displayName, int amountInStock, double unitCost, int teethCount, GearMaterial material, double pitchDiameterMm) {
+    public Gear(int partID, String displayName, int amountInStock, double unitCost, int teethCount,
+            GearMaterial material, double pitchDiameterMm) {
         super(partID, displayName, amountInStock, unitCost);
 
         if (teethCount <= 0) {
@@ -19,11 +20,12 @@ public class Gear extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Gear, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Teeth Count: %d, Material: %s, Pitch Diameter (mm): %f",
-                                                  getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), teethCount, material, pitchDiameterMm 
-        );
+        return String.format(
+                "Category: Gear, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Teeth Count: %d, Material: %s, Pitch Diameter (mm): %f",
+                getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), teethCount, material,
+                pitchDiameterMm);
     }
-    
+
     public int getTeethCount() {
         return teethCount;
     }

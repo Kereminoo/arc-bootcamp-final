@@ -26,7 +26,8 @@ public class InventoryManager {
 
     public void addNewItem(Hardware item) {
         if (existsInInventory(item.getPartID())) {
-            throw new IllegalArgumentException("Object with part ID " + item.getPartID() + "is already present in the inventory!");
+            throw new IllegalArgumentException(
+                    "Object with part ID " + item.getPartID() + "is already present in the inventory!");
         }
         inventory.put(item.getPartID(), item);
     }
@@ -58,8 +59,7 @@ public class InventoryManager {
     public List<Hardware> getSortedInventoryByTotalValue() {
         List<Hardware> inventoryList = new ArrayList<>(inventory.values());
         inventoryList.sort(Comparator.comparingDouble(
-            hardware -> hardware.getUnitCost() * hardware.getAmountInStock()
-        ));
+                hardware -> hardware.getUnitCost() * hardware.getAmountInStock()));
         return inventoryList;
     }
 

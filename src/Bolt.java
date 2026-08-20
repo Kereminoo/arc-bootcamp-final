@@ -3,7 +3,8 @@ public class Bolt extends Hardware {
     private double diameterMm;
     private HeadType headType;
 
-    public Bolt(int partID, String displayName, int amountInStock, double unitCost, double lengthMm, double diameterMm, HeadType headType) {
+    public Bolt(int partID, String displayName, int amountInStock, double unitCost, double lengthMm, double diameterMm,
+            HeadType headType) {
         super(partID, displayName, amountInStock, unitCost);
 
         if (lengthMm <= 0) {
@@ -20,9 +21,9 @@ public class Bolt extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Length (mm): %f, Diameter (mm): %f, Head Type: %s.",
-                                                  getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), lengthMm, diameterMm, headType 
-        );
+        return String.format(
+                "Category: Bolt, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Length (mm): %f, Diameter (mm): %f, Head Type: %s.",
+                getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), lengthMm, diameterMm, headType);
     }
 
     public double getLengthMm() {

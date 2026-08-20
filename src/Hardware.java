@@ -15,7 +15,8 @@ public abstract class Hardware {
             throw new IllegalArgumentException("Hardware cannot have negative stock.");
         }
         if (unitCost <= 0) {
-            throw new IllegalArgumentException("Hardware cannot be free or cost negative money (we ain't giving money away bro).");
+            throw new IllegalArgumentException(
+                    "Hardware cannot be free or cost negative money (we ain't giving money away bro).");
         }
         this.partID = partID;
         this.displayName = displayName;
@@ -51,14 +52,15 @@ public abstract class Hardware {
     @Override
     public String toString() {
         return String.format("Hardware[partID=%d, displayName=%s, amountInStock=%d, unitCost=%f]",
-                                                     partID, displayName, amountInStock, unitCost
-        );
+                partID, displayName, amountInStock, unitCost);
     }
 
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Hardware)) return false;
-        if (this == other) return true;
+        if (!(other instanceof Hardware))
+            return false;
+        if (this == other)
+            return true;
         return this.partID == ((Hardware) other).partID;
     }
 

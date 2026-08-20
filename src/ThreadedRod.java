@@ -3,7 +3,8 @@ public class ThreadedRod extends Hardware {
     private double lengthMeters;
     private double threadPitchMm;
 
-    public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double lengthMeters, double threadPitchMm) {
+    public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm,
+            double lengthMeters, double threadPitchMm) {
         super(partID, displayName, amountInStock, unitCost);
         if (diameterMm <= 0) {
             throw new IllegalArgumentException("Diameter cannot be zero or negative!");
@@ -22,11 +23,12 @@ public class ThreadedRod extends Hardware {
 
     @Override
     public String getCategoryDetails() {
-        return String.format("Category: Threaded Rod, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Diameter (mm): %f, Length (m): %f, Thread Pitch (mm): %f.",
-                                                  getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), diameterMm, lengthMeters, threadPitchMm
-        );
+        return String.format(
+                "Category: Threaded Rod, PartID: %d, Display Name: %s, Amount Left In Stock: %d, Unit Cost: %f, Diameter (mm): %f, Length (m): %f, Thread Pitch (mm): %f.",
+                getPartID(), getDisplayName(), getAmountInStock(), getUnitCost(), diameterMm, lengthMeters,
+                threadPitchMm);
     }
-    
+
     public double getDiameterMm() {
         return diameterMm;
     }
