@@ -16,15 +16,23 @@ public class InventoryManager {
         return inventory;
     }
 
+    public void setInventory(Map<Integer, Hardware> newInventory) {
+        this.inventory = newInventory;
+    }
+
+    public boolean existsInInventory(int partID) {
+        return inventory.containsKey(partID);
+    }
+
     public void addNewItem(Hardware item) {
-        if (inventory.containsKey(item.getPartID())) {
+        if (existsInInventory(item.getPartID())) {
             throw new IllegalArgumentException("Object with part ID " + item.getPartID() + "is already present in the inventory!");
         }
         inventory.put(item.getPartID(), item);
     }
 
     public void removeItem(int partID) {
-        if (!inventory.containsKey(partID)) {
+        if (!existsInInventory(partID)) {
             throw new IllegalArgumentException("There is no object in the inventory with part ID " + partID + "!");
         }
         inventory.remove(partID);
@@ -35,7 +43,7 @@ public class InventoryManager {
     }
 
     public Optional<Hardware> findItemByID(int partID) {
-        if (inventory.containsKey(partID)) {
+        if (existsInInventory(partID)) {
             return Optional.of(inventory.get(partID));
         }
         return Optional.empty();

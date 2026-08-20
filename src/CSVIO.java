@@ -133,8 +133,7 @@ public class CSVIO {
                                 unitCost, 
                                 diameterMm, 
                                 lengthMeters, 
-                                threadPitchMm, 
-                                lengthMeters
+                                threadPitchMm
                             );
                             break;
                         case "WASHER":

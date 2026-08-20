@@ -3,7 +3,7 @@ public class ThreadedRod extends Hardware {
     private double lengthMeters;
     private double threadPitchMm;
 
-    public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double lengthMeters, double threadPitchMm, double pricePerKg) {
+    public ThreadedRod(int partID, String displayName, int amountInStock, double unitCost, double diameterMm, double lengthMeters, double threadPitchMm) {
         super(partID, displayName, amountInStock, unitCost);
         if (diameterMm <= 0) {
             throw new IllegalArgumentException("Diameter cannot be zero or negative!");
