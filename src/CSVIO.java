@@ -136,6 +136,7 @@ public class CSVIO {
                                 threadPitchMm, 
                                 lengthMeters
                             );
+                            break;
                         case "WASHER":
                             double outerDiameterMm = Double.parseDouble(splitLine[5]);
                             double innerDiameterMm = Double.parseDouble(splitLine[6]);
@@ -178,8 +179,7 @@ public class CSVIO {
                 }
             }
         } catch (IOException e) {
-            // if the inventory cannot load, then there's no reason to keep running the program
-            throw new RuntimeException(e);
+            System.err.println("Could not read CSV file in " + filepath + ". Returning empty inventory.");
         }
         return inventoryManager;
     }

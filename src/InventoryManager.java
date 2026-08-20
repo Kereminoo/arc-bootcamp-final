@@ -17,10 +17,16 @@ public class InventoryManager {
     }
 
     public void addNewItem(Hardware item) {
+        if (inventory.containsKey(item.getPartID())) {
+            throw new IllegalArgumentException("Object with part ID " + item.getPartID() + "is already present in the inventory!");
+        }
         inventory.put(item.getPartID(), item);
     }
 
     public void removeItem(int partID) {
+        if (!inventory.containsKey(partID)) {
+            throw new IllegalArgumentException("There is no object in the inventory with part ID " + partID + "!");
+        }
         inventory.remove(partID);
     }
 
@@ -50,6 +56,9 @@ public class InventoryManager {
     }
 
     public List<Hardware> getLowStockItems(int lowStockThreshold) {
+        if (lowStockThreshold <= 0) {
+            throw new IllegalArgumentException("Threshold for low stock cannot be zero or negative!");
+        }
         List<Hardware> inventoryList = new ArrayList<>(inventory.values());
         // only keeps the items with low stock
         inventoryList.removeIf(hardware -> hardware.getAmountInStock() > lowStockThreshold);
