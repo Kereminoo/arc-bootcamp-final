@@ -169,7 +169,7 @@ public class App {
                 "This type of hardware doesn't exist. Try again.",
                 input -> Set.of("bearing", "bolt", "drillbit", "gear", "nut", "screwdriver", "screwdriverbit",
                         "threadedrod", "washer", "wire").contains(input.toLowerCase().replace(" ", "")),
-                scanner);
+                scanner).toLowerCase().replace(" ", "");
         int partID = Integer.parseInt(askQuestion(
                 "What is the part ID of the hardware?",
                 "Hardware with the same part ID already exists, or part ID is invalid. Try again.",
